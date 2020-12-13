@@ -31,7 +31,7 @@
        
             
             <b-row class="mt-4" >
-                <b-col cols="8" md="8" >
+                <b-col cols="8" md="8" id="password" >
                    
                     <b-form-input 
                     id="input-password"
@@ -39,6 +39,7 @@
                     require
                     type="password" 
                     placeholder="Enter password"
+                    
                      />
                 </b-col>
         
@@ -46,7 +47,7 @@
                     
                     <a 
                     class= "btn btn-outline-success  " 
-                    @click="generar()">Generar</a>
+                    @click="generarPassword()">Generar</a>
                     
                 </b-col>
             </b-row>
@@ -74,7 +75,7 @@
                 type="date" >
            </b-form-input>
            <br>
-      
+                
 
       <b-button type="submit" variant="success" @click="enviarPost">Enviar</b-button>
       <b-button type="reset" variant="danger" @click="resetValores()">Reset</b-button>
@@ -88,8 +89,13 @@
 </template>
 
 <script>
+
+import uuid from 'uuid/v4'
+
+
   export default {
     name: 'Form',
+    
     data() {
       return {
         form: {
@@ -129,7 +135,7 @@
           
           
         }).catch(err => {
-                // Do something for an error here
+                
                 console.log("Error Reading data " + err);
               });
               
@@ -144,8 +150,21 @@
           this.url=''
           this.date=''
 
-      }
+      },
+      generarPassword(){
+        console.log(uuid());
+        let pass = uuid();
+        
+        document.getElementById("input-password").value = pass;
+
+
+      },
+      
     }
       
   }// export
 </script>
+
+
+
+
