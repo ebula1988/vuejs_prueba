@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/"  ><a @click="obtenerDatosTodos" >Home</a></router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/"  ><a @click="obtenerDatosTodos" >Listado</a></router-link> |
+      <router-link to="/about">Registrar</router-link>
     </div>
     <router-view/>
   </div>

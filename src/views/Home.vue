@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Search/>
+  
     <Listar/>
  
    
@@ -13,7 +13,6 @@ import Listar from '../components/Listar.vue'
 // @ is an alias to /src
 
 
-import Search from '../components/Search.vue'
 
 
 
@@ -23,7 +22,7 @@ export default {
   components: {
  
   
-   Search,
+  
     Listar
   }
 }
